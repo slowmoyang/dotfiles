@@ -26,5 +26,9 @@
     },
     {
         "target": "mypy.ini"
+    },
+    {
+        "symlink": ".config/zellij",
+        "target": "zellij"
     }
 ]
