@@ -1,4 +1,4 @@
 [
     [".ssh/config", "ssh/config"],
-    [".ssh/config/config.d/gate", "ssh/config.d/gate", "gate"]
+    [".ssh/config.d/gate", "ssh/gate", "gate"]
 ]

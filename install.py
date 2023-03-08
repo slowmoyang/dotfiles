@@ -14,44 +14,45 @@ def run(config):
     with open(root_dir / 'link.json') as stream:
         link_data: list = json.load(stream)
 
-    source_dir = root_dir / 'config'
-    target_dir = Path.home()
-
-    if config.verbose:
-        print('# example: link -> data')
-
+    target_dir = root_dir / 'config'
+    symlink_dir = Path.home()
     hostname = gethostname()
 
-    for each in link_data:
+    if config.verbose:
+        print('# example: symlink -> target')
+
+    for data in link_data:
         # FIXME
-        target: str = each[0]
-        source: str = each[1]
-        if len(each) == 3:
-            allowed_hosts: list[str] = each[2].split(',')
+        symlink: str = data[0]
+        target: str = data[1]
+
+        if len(data) == 3:
+            allowed_hosts = data[2].split(',')
             if hostname not in allowed_hosts:
                 continue
 
-        # data
-        source_file = source_dir / source
-        if not source_file.exists():
-            warnings.warn(f'FileNotFound: {source_file=}')
+        # check target
+        target_file = target_dir / target
+        if not target_file.exists():
+            warnings.warn(f'FileNotFound: {target_file=}')
             continue
 
-        # link
-        target_file = target_dir / target
-        if target_file.exists():
-            if target_file.is_symlink():
-                target_file.unlink()
+        # check symlnk
+        symlink_file = symlink_dir / symlink
+        if symlink_file.exists():
+            if symlink_file.is_symlink():
+                symlink_file.unlink()
             else:
-                print(f'non-symlink file exists. backup {target_file}')
-                target_file.rename(target_file.with_suffix('.bak'))
+                print(f'non-symlink file exists. backup {symlink_file}')
+                symlink_file.rename(symlink_file.with_suffix('.bak'))
 
-        target_file.parent
+        symlink_file.parent.mkdir(parents=True, exist_ok=True)
 
         # make a link pointing to source
-        target_file.symlink_to(source_file)
         if config.verbose:
-            print(f'{target_file} -> {source_file}')
+            print(f'{symlink_file} -> {target_file}')
+        symlink_file.symlink_to(target_file)
+
 
 
 def main():
