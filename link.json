@@ -1,5 +1,8 @@
 [
     {
+        "target": "zshrc"
+    },
+    {
         "symlink": ".ssh/config",
         "target": "ssh/config"
     },
@@ -14,5 +17,8 @@
     },
     {
         "target": "nbrc"
+    },
+    {
+        "target": "nvmrc"
     }
 ]
