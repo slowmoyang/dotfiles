@@ -1,0 +1,33 @@
+[user]
+    name = Seungjin Yang
+    email = slowmoyang@gmail.com
+    github = slowmoyang
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = true
+    pager = true
+[push]
+    default = matching
+[core]
+    editor = nvim
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    file-style = cyan
+    grep-file-style = cyan
+    grep-line-number-style = cyan
+    line-numbers = true
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
+[oh-my-zsh]
+    hide-dirty = 1
+    hide-status = 1
+[init]
+    defaultBranch = main

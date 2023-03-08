@@ -1,4 +1,18 @@
 [
-    [".ssh/config", "ssh/config"],
-    [".ssh/config.d/gate", "ssh/gate", "gate"]
+    {
+        "symlink": ".ssh/config",
+        "target": "ssh/config"
+    },
+    {
+        "symlink": ".ssh/config.d/gate",
+        "target": "ssh/gate",
+        "host": ["gate"]
+    },
+    {
+        "symlink": ".gitconfig",
+        "target": "git/gitconfig"
+    },
+    {
+        "target": "nbrc"
+    }
 ]
