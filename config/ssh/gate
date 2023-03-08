@@ -1,0 +1,40 @@
+# https://twiki.cern.ch/twiki/bin/view/Main/Kerberos
+# Allow short host names
+# You can add further CERN hosts to the next line
+Host !*.cern.ch lxplus* aisplus* 
+   CanonicalizeHostname yes
+   CanonicalDomains cern.ch
+
+Host *.cern.ch
+   User seyang
+   ForwardX11 yes
+   # Allow login per Kerberos
+   GSSAPIAuthentication yes
+   # Transmit AFS token
+   GSSAPIDelegateCredentials yes
+   # Needed for non FQDNs
+   GSSAPITrustDNS yes
+
+# lxplus is a cluster with a shared private ssh key
+# stop it from flodding your known_hosts and asking
+# every time to check the private key
+Host lxplus*.cern.ch aisplus*.cern.ch
+   HostKeyAlias cernlxpluskey
+   UserKnownHostsFile ~/.ssh/known_hosts.lxplus
+
+
+Host ss1
+    HostName 172.16.10.36
+    user seyang
+
+
+Host ss2
+    HostName 172.16.10.37
+    user seyang
+
+
+Host gitlab.sscc.uos.ac.kr
+    HostName gitlab.sscc.uos.ac.kr
+    User seungjin.yang
+    IdentityFile ~/.ssh/id_ed25519
+    IdentitiesOnly=yes

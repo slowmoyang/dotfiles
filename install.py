@@ -5,13 +5,14 @@ import argparse
 from pathlib import Path
 import json
 import warnings
+from socket import gethostname
 
 
 def run(config):
     root_dir = Path(__file__).parent
 
     with open(root_dir / 'link.json') as stream:
-        link_data: dict[str, str] = json.load(stream)
+        link_data: list = json.load(stream)
 
     source_dir = root_dir / 'config'
     target_dir = Path.home()
@@ -19,7 +20,17 @@ def run(config):
     if config.verbose:
         print('# example: link -> data')
 
-    for target, source in link_data.items():
+    hostname = gethostname()
+
+    for each in link_data:
+        # FIXME
+        target: str = each[0]
+        source: str = each[1]
+        if len(each) == 3:
+            allowed_hosts: list[str] = each[2].split(',')
+            if hostname not in allowed_hosts:
+                continue
+
         # data
         source_file = source_dir / source
         if not source_file.exists():
@@ -34,6 +45,8 @@ def run(config):
             else:
                 print(f'non-symlink file exists. backup {target_file}')
                 target_file.rename(target_file.with_suffix('.bak'))
+
+        target_file.parent
 
         # make a link pointing to source
         target_file.symlink_to(source_file)
