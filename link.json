@@ -20,5 +20,11 @@
     },
     {
         "target": "nvmrc"
+    },
+    {
+        "target": "pylintrc"
+    },
+    {
+        "target": "mypy.ini"
     }
 ]
