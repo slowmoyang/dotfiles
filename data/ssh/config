@@ -1,0 +1,26 @@
+Host *
+    ForwardAgent yes
+    ForwardX11 yes
+    XAuthLocation /opt/X11/bin/xauth
+
+Host gate
+    HostName gate.sscc.uos.ac.kr
+    User seyang
+    IdentityFile ~/.ssh/id_ed25519
+    Port 54329
+
+Host GATE
+    HostName 210.117.209.31
+    User seyang
+    IdentityFile ~/.ssh/id_ed25519
+
+Host fpga
+    HostName fpga.sscc.uos.ac.kr
+    User seyang
+    IdentityFile ~/.ssh/id_ed25519
+
+Host khu
+    HostName hep.khu.ac.kr
+    Port 2222
+    User slowmoyang
+    IdentityFile ~/.ssh/id_ed25519
