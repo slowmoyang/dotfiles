@@ -45,5 +45,8 @@
     {
         "symlink": ".config/cheat/conf.yml",
         "target": "cheat.yml"
+    },
+    {
+        "symlink": "clang-format"
     }
 ]
