@@ -1,5 +1,8 @@
 [
     {
+        "target": "zshenv"
+    },
+    {
         "target": "zshrc"
     },
     {
