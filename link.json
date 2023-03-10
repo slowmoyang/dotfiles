@@ -30,5 +30,17 @@
     {
         "symlink": ".config/zellij",
         "target": "zellij"
+    },
+    {
+        "symlink": ".config/gh/config.yml",
+        "target": "gh.yml"
+    },
+    {
+        "symlink": ".config/bottom/bottom.toml",
+        "target": "bottom.toml"
+    },
+    {
+        "symlink": ".config/cheat/conf.yml",
+        "target": "cheat.yml"
     }
 ]
