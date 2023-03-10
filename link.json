@@ -47,6 +47,6 @@
         "target": "cheat.yml"
     },
     {
-        "symlink": "clang-format"
+        "target": "clang-format"
     }
 ]
