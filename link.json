@@ -48,5 +48,10 @@
     },
     {
         "target": "clang-format"
+    },
+    {
+        "symlink": ".config/kitty/kitty.conf",
+        "target": "kitty.conf",
+        "platform": ["darwin"]
     }
 ]

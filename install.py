@@ -1,11 +1,25 @@
 #!/usr/bin/env python3
 '''setup dotfiles
 '''
+import sys
 import argparse
 from pathlib import Path
 import json
 import warnings
 from socket import gethostname
+
+def check_host(data: dict):
+    if 'host' not in data:
+        return True
+    hostname = gethostname()
+    return hostname in data['host']
+
+
+def check_platform(data: dict):
+    if 'platform' not in data:
+        return True
+    platform_list: list[str] = data['platform']
+    return any(sys.platform.startswith(each) for each in platform_list)
 
 
 def run(config):
@@ -16,7 +30,6 @@ def run(config):
 
     target_dir = root_dir / 'config'
     symlink_dir = Path.home()
-    hostname = gethostname()
 
     if config.verbose:
         print('# example: symlink -> target')
@@ -25,7 +38,10 @@ def run(config):
         target = data['target']
         symlink = data.get('symlink', '.' + target)
 
-        if 'host' in data and hostname not in data['host']:
+        if not check_platform(data):
+            continue
+
+        if not check_host(data):
             continue
 
         target_file = target_dir / target
