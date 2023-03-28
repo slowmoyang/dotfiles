@@ -1,60 +1,55 @@
 [
-    {
-        "target": "zshenv"
-    },
-    {
-        "target": "zshrc"
-    },
-    {
-        "symlink": ".ssh/config",
-        "target": "ssh/config"
-    },
-    {
-        "symlink": ".ssh/config.d/gate",
-        "target": "ssh/gate",
-        "host": ["gate"]
-    },
-    {
-        "symlink": ".gitconfig",
-        "target": "git/gitconfig"
-    },
-    {
-        "target": "nbrc"
-    },
-    {
-        "target": "nvmrc"
-    },
-    {
-        "target": "pylintrc"
-    },
-    {
-        "target": "mypy.ini"
-    },
-    {
-        "symlink": ".config/zellij",
-        "target": "zellij"
-    },
-    {
-        "symlink": ".config/gh/config.yml",
-        "target": "gh.yml"
-    },
-    {
-        "symlink": ".config/bottom/bottom.toml",
-        "target": "bottom.toml"
-    },
-    {
-        "symlink": ".config/cheat/conf.yml",
-        "target": "cheat.yml"
-    },
-    {
-        "target": "clang-format"
-    },
-    {
-        "symlink": ".config/kitty/kitty.conf",
-        "target": "kitty.conf",
-        "platform": ["darwin"]
-    },
-    {
-        "target": "condarc"
-    }
+  {
+    "target": "zshenv"
+  },
+  {
+    "target": "zshrc"
+  },
+  {
+    "symlink": ".ssh/config",
+    "target": "ssh/config"
+  },
+  {
+    "symlink": ".ssh/config.d/gate",
+    "target": "ssh/gate",
+    "host": ["gate"]
+  },
+  {
+    "symlink": ".gitconfig",
+    "target": "git/gitconfig"
+  },
+  {
+    "target": "nbrc"
+  },
+  {
+    "target": "nvmrc"
+  },
+  {
+    "target": "pylintrc"
+  },
+  {
+    "target": "mypy.ini"
+  },
+  {
+    "symlink": ".config/zellij",
+    "target": "zellij"
+  },
+  {
+    "symlink": ".config/gh/config.yml",
+    "target": "gh.yml"
+  },
+  {
+    "symlink": ".config/bottom/bottom.toml",
+    "target": "bottom.toml"
+  },
+  {
+    "symlink": ".config/cheat/conf.yml",
+    "target": "cheat.yml"
+  },
+  {
+    "target": "clang-format"
+  },
+  {
+    "target": "condarc"
+  }
 ]
