@@ -125,7 +125,7 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source ${HOME}/.config/zshrc/setup.zsh
+source ${HOME}/.config/zsh/setup.zsh
 
 if is-at-least ${P10K_MIN_ZSH_VERSION} ${ZSH_VERSION}; then
     # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
