@@ -23,6 +23,8 @@ export ZSH="$HOME/.oh-my-zsh"
 if is-at-least ${P10K_MIN_ZSH_VERSION} ${ZSH_VERSION}; then
     if [[ $(uname) == "Darwin" ]]; then
         source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+    elif [[ $(uname) == "Linux" ]]; then
+        source ${HOME}/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
     fi
 else
     ZSH_THEME="crcandy"
