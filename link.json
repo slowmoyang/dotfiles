@@ -6,6 +6,9 @@
     "target": "zshrc"
   },
   {
+    "target": "p10k.zsh"
+  },
+  {
     "symlink": ".ssh/config",
     "target": "ssh/config"
   },
