@@ -54,5 +54,9 @@
   },
   {
     "target": "condarc"
+  },
+  {
+    "symlink": ".config/bat/config",
+    "target": "bat.conf"
   }
 ]
