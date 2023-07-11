@@ -1,4 +1,4 @@
-Include config.d/*
+# Include config.d/*
 
 Host *
     ForwardAgent yes
@@ -8,21 +8,41 @@ Host *
 Host gate
     HostName gate.sscc.uos.ac.kr
     User seyang
-    IdentityFile ~/.ssh/id_ed25519
+    IdentityFile ~/.ssh/key/gate/id_ed25519
     Port 54329
 
 Host GATE
     HostName 210.117.209.31
     User seyang
     IdentityFile ~/.ssh/id_ed25519
+    Port 54329
 
 Host fpga
     HostName fpga.sscc.uos.ac.kr
     User seyang
-    IdentityFile ~/.ssh/id_ed25519
+    IdentityFile ~/.ssh/id_ed25519 # FIXME
 
 Host khu
     HostName hep.khu.ac.kr
     Port 2222
     User slowmoyang
     IdentityFile ~/.ssh/id_ed25519
+
+Host lxplus.cern.ch aiadm.cern.ch mylinuxbox.cern.ch pcmydepmygroup*.cern.ch
+
+GSSAPIAuthentication yes
+GSSAPIDelegateCredentials yes
+
+Host lxplus
+    HostName lxplus.cern.ch
+    User seyang
+    IdentityFile ~/.ssh/id_ed25519
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials yes
+
+Host cms-rpc-autodqm-test
+    HostName cms-rpc-autodqm-test
+    User seyang
+    IdentityFile ~/.ssh/id_ed25519
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials yes
