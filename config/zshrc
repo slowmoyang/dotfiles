@@ -90,6 +90,7 @@ plugins=(
     zsh-syntax-highlighting
     zsh-autosuggestions
     fzf
+    zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -121,6 +122,8 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source ${HOME}/.config/zsh/setup.zsh
+
+eval "$(zoxide init zsh)"
 
 if is-at-least ${P10K_MIN_ZSH_VERSION} ${ZSH_VERSION}; then
     # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
