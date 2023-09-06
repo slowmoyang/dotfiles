@@ -35,12 +35,12 @@ Host umd
 # account rd1009
 Host nurion
     HostName nurion.ksc.re.kr
-    User x2718a04 # login id, account=rd1009
+    User x2718a04
     Port 22
 
 Host neuron
     HostName neuron.ksc.re.kr
-    User x2718a04 # login id, account=rd1009
+    User x2718a04
     Port 22
 
 Host lxplus.cern.ch aiadm.cern.ch mylinuxbox.cern.ch pcmydepmygroup*.cern.ch
