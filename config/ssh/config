@@ -20,7 +20,7 @@ Host GATE
 Host fpga
     HostName fpga.sscc.uos.ac.kr
     User seyang
-    IdentityFile ~/.ssh/id_ed25519 # FIXME
+    IdentityFile ~/.ssh/id_ed25519
 
 Host khu
     HostName hep.khu.ac.kr
