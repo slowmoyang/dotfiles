@@ -7,7 +7,7 @@ Host *
 Host gate
     HostName gate.sscc.uos.ac.kr
     User seyang
-    IdentityFile ~/.ssh/key/gate/id_ed25519
+    IdentityFile ~/.ssh/id_ed25519
     Port 54329
 
 Host GATE
@@ -24,11 +24,6 @@ Host fpga
 Host khu
     HostName hep.khu.ac.kr
     Port 2222
-    User slowmoyang
-    IdentityFile ~/.ssh/id_ed25519
-
-Host umd
-    HostName pa-pub.umd.edu
     User slowmoyang
     IdentityFile ~/.ssh/id_ed25519
 
