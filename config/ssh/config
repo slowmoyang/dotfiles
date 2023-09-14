@@ -31,15 +31,18 @@ Host umd
     User slowmoyang
     HostName fiesta.private.pa.umd.edu
     ProxyJump umd-bastion
+    IdentityFile ~/.ssh/id_ed25519
 
 Host gala
     User slowmoyang
     HostName gala.private.pa.umd.edu
     ProxyJump umd-bastion
+    IdentityFile ~/.ssh/id_ed25519
 
 Host umd-bastion
     User slowmoyang
     HostName pa-pub.umd.edu
+    IdentityFile ~/.ssh/id_ed25519
 
 # account rd1009
 Host nurion
