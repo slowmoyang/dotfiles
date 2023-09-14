@@ -1,10 +1,9 @@
-# Include config.d/*
 Host *
     ForwardAgent yes
     ForwardX11 yes
     XAuthLocation /opt/X11/bin/xauth
 
-Host gate
+Host uos gate
     HostName gate.sscc.uos.ac.kr
     User seyang
     IdentityFile ~/.ssh/id_ed25519
@@ -16,8 +15,8 @@ Host GATE
     IdentityFile ~/.ssh/id_ed25519
     Port 54329
 
-Host fpga
-    HostName fpga.sscc.uos.ac.kr
+Host knu
+    HostName kcms-t2.knu.ac.kr
     User seyang
     IdentityFile ~/.ssh/id_ed25519
 
@@ -25,6 +24,11 @@ Host khu
     HostName hep.khu.ac.kr
     Port 2222
     User slowmoyang
+    IdentityFile ~/.ssh/id_ed25519
+
+Host umd-bastion
+    User slowmoyang
+    HostName pa-pub.umd.edu
     IdentityFile ~/.ssh/id_ed25519
 
 Host umd
@@ -39,12 +43,6 @@ Host gala
     ProxyJump umd-bastion
     IdentityFile ~/.ssh/id_ed25519
 
-Host umd-bastion
-    User slowmoyang
-    HostName pa-pub.umd.edu
-    IdentityFile ~/.ssh/id_ed25519
-
-# account rd1009
 Host nurion
     HostName nurion.ksc.re.kr
     User x2718a04
@@ -62,13 +60,6 @@ GSSAPIDelegateCredentials yes
 
 Host lxplus
     HostName lxplus.cern.ch
-    User seyang
-    IdentityFile ~/.ssh/id_ed25519
-    GSSAPIAuthentication yes
-    GSSAPIDelegateCredentials yes
-
-Host cms-rpc-autodqm-test
-    HostName cms-rpc-autodqm-test
     User seyang
     IdentityFile ~/.ssh/id_ed25519
     GSSAPIAuthentication yes
