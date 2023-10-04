@@ -9,7 +9,7 @@ Host uos gate
     IdentityFile ~/.ssh/id_ed25519
     Port 54329
 
-Host GATE
+Host gate-ip
     HostName 210.117.209.31
     User seyang
     IdentityFile ~/.ssh/id_ed25519
@@ -17,6 +17,26 @@ Host GATE
 
 Host knu
     HostName kcms-t2.knu.ac.kr
+    User seyang
+    IdentityFile ~/.ssh/id_ed25519
+
+Host knu-cms
+    HostName cms.knu.ac.kr
+    User seyang
+    IdentityFile ~/.ssh/id_ed25519
+
+Host knu-cms01
+    HostName cms01.knu.ac.kr
+    User seyang
+    IdentityFile ~/.ssh/id_ed25519
+
+Host knu-cms02
+    HostName cms02.knu.ac.kr
+    User seyang
+    IdentityFile ~/.ssh/id_ed25519
+
+Host knu-cms03
+    HostName cms03.knu.ac.kr
     User seyang
     IdentityFile ~/.ssh/id_ed25519
 
