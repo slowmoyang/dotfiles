@@ -7,16 +7,19 @@ Host uos gate
     HostName gate.sscc.uos.ac.kr
     User seyang
     IdentityFile ~/.ssh/id_ed25519
-    Port 54329
 
 Host gate-ip
     HostName 210.117.209.31
     User seyang
     IdentityFile ~/.ssh/id_ed25519
-    Port 54329
 
-Host knu
+Host knu-t2
     HostName kcms-t2.knu.ac.kr
+    User seyang
+    IdentityFile ~/.ssh/id_ed25519
+
+Host knu knu-t3
+    HostName kcms-t3.knu.ac.kr
     User seyang
     IdentityFile ~/.ssh/id_ed25519
 
@@ -70,7 +73,7 @@ Host nurion
 
 Host neuron
     HostName neuron.ksc.re.kr
-    User x2718a04
+    User x2719a04
     Port 22
 
 Host lxplus.cern.ch aiadm.cern.ch mylinuxbox.cern.ch pcmydepmygroup*.cern.ch
