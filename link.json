@@ -60,7 +60,7 @@
     "target": "bat.conf"
   },
   {
-    "symlink": ".config/kitty/kitty.conf",
-    "target": "kitty.conf"
+    "symlink": ".config/kitty",
+    "target": "kitty"
   }
 ]
