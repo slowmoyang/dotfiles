@@ -13,4 +13,4 @@
 # https://github.com/xwmx/nb
 ###############################################################################
 
-export EDITOR="nvim" # Set by `nb` • Mon Jan 22 15:18:42 KST 2024
+export EDITOR="nvim"
