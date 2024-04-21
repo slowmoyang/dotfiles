@@ -87,3 +87,9 @@ Host lxplus
     IdentityFile ~/.ssh/id_ed25519
     GSSAPIAuthentication yes
     GSSAPIDelegateCredentials yes
+
+
+Host gsdc
+    HostName ui20.sdfarm.kr
+    Port 4280
+    User seyang
