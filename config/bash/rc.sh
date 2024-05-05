@@ -12,13 +12,13 @@ fi
 
 export PATH=${HOME}/opt:${PATH}
 
-# source ${HOME}/.config/bash/conf.d/bashit.sh
 source ${HOME}/.config/bash/conf.d/micromamba.sh
 source ${HOME}/.config/bash/conf.d/nvm.sh
 source ${HOME}/.config/bash/conf.d/rust.sh
 
 export STARSHIP_CONFIG=${HOME}/.config/starship.toml
 eval "$(starship init bash)"
+
 eval "$(zoxide init bash)"
 
 alias c="clear"
