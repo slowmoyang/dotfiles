@@ -1,0 +1,152 @@
+###############################################################################
+# bash
+# https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html
+###############################################################################
+[bash]
+    [bash.profile]
+    target = "./config/bash/profile.sh"
+    link = "~/.bash_profile"
+
+    [bash.login]
+    target = "./config/bash/login.sh"
+    link = "~/.bash_login"
+
+    [bash.logout]
+    target = "./config/bash/logout.sh"
+    link = "~/.bash_logout"
+
+    [bash.rc]
+    target = "./config/bash/rc.sh"
+    link = "~/.bashrc"
+
+    [bash.confd]
+    target = "./config/bash/conf.d"
+    link = "~/.config/bash/conf.d"
+
+###############################################################################
+# zsh
+# https://zsh.sourceforge.io/Intro/intro_3.html
+#
+# TODO
+# - [ ] ZDOTDIR
+#
+# https://www.reddit.com/r/zsh/comments/3ubrdr/proper_way_to_set_zdotdir/
+# https://github.com/mattmc3/zdotdir
+###############################################################################
+[zsh]
+    [zsh.env]
+    target = "./config/zsh/env.zsh"
+    link = "~/.zshenv"
+
+    [zsh.profile]
+    target = "./config/zsh/profile.zsh"
+    link = "~/.zprofile"
+
+    [zsh.rc]
+    target = "./config/zsh/rc.zsh"
+    link = "~/.zshrc"
+
+    [zsh.login]
+    target = "./config/zsh/login.zsh"
+    link = "~/.zlogin"
+
+    [zsh.logout]
+    target = "./config/zsh/logout.zsh"
+    link = "~/.zlogout"
+
+
+###############################################################################
+# fish
+###############################################################################
+[fish]
+target = "./config/fish"
+link = "~/.config/fish"
+
+
+###############################################################################
+#
+###############################################################################
+[starship]
+target = "./config/starship.toml"
+link = "~/.config/starship.toml"
+
+###############################################################################
+#
+###############################################################################
+[ssh]
+    [ssh.config]
+    target = "./config/ssh/config"
+    link = "~/.ssh/config"
+
+
+###############################################################################
+# git
+# https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
+###############################################################################
+[git]
+    [git.config]
+    target = "./config/git/gitconfig"
+    link = "~/.config/git/config"
+
+###############################################################################
+#
+###############################################################################
+
+# https://conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html
+[conda]
+target = "./config/condarc"
+link = "~/.condarc"
+
+[nvm]
+target = "./config/nvmrc"
+link = "~/.nvmrc"
+
+
+###############################################################################
+#
+###############################################################################
+[kitty]
+target = "./config/kitty/"
+link = "~/.config/kitty"
+
+###############################################################################
+#
+###############################################################################
+[pylint]
+target = "./config/pylintrc"
+link = "~/.pylintrc"
+
+[mypy]
+target = "./config/mypy.ini"
+link = "~/.mypy.ini"
+
+[clang]
+target = "./config/clang-format"
+link = "~/.clang-format"
+
+###############################################################################
+#
+###############################################################################
+[nb]
+target = "./config/nbrc"
+link = "~/.nbrc"
+
+[zellij]
+target = "./config/zellij"
+link = "~/.config/zellij"
+
+[gh]
+target = "./config/gh.yml"
+link = "~/.config/gh/config.yml"
+
+[bottom]
+target = "./config/bottom.toml"
+link = "~/.config/bottom/bottom.toml"
+
+[cheat]
+target = "./config/cheat.yml"
+link = "~/.config/cheat/conf.yml"
+
+[bat]
+target = "./config/bat.conf"
+link = "~/.config/bat/config"

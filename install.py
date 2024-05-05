@@ -1,79 +1,55 @@
 #!/usr/bin/env python3
 '''setup dotfiles
 '''
-import sys
-import argparse
 from pathlib import Path
-import json
-import warnings
-from socket import gethostname
-
-def check_host(data: dict):
-    if 'host' not in data:
-        return True
-    hostname = gethostname()
-    return hostname in data['host']
+import toml
+import argparse
 
 
-def check_platform(data: dict):
-    if 'platform' not in data:
-        return True
-    platform_list: list[str] = data['platform']
-    return any(sys.platform.startswith(each) for each in platform_list)
+
+def process_path(path: Path):
+    # return path.expanduser()
+    return path.resolve()
+
+def make_link(target, link):
+    target = Path(target).resolve()
+    link = Path(link).expanduser()
+
+    if not target.exists():
+        raise FileNotFoundError(f'{target=}')
+
+    if link.exists():
+        # TODO rm
+        if link.is_symlink():
+            link.unlink()
+        else:
+            link.rename(link.with_suffix('.bak'))
+
+    link.parent.mkdir(parents=True, exist_ok=True)
+    print(f'{link} --> {target}')
+    link.symlink_to(target)
 
 
-def run(config):
+def process(data):
+    if 'target' in data and 'link' in data:
+        make_link(target=data['target'], link=data['link'])
+    else:
+        for key, value in data.items():
+            process(value)
+
+def run(verbose: bool):
     root_dir = Path(__file__).parent
-
-    with open(root_dir / 'link.json') as stream:
-        link_data: list[dict[str, str]] = json.load(stream)
-
-    target_dir = root_dir / 'config'
-    symlink_dir = Path.home()
-
-    if config.verbose:
-        print('# example: symlink -> target')
-
-    for data in link_data:
-        target = data['target']
-        symlink = data.get('symlink', '.' + target)
-
-        if not check_platform(data):
-            continue
-
-        if not check_host(data):
-            continue
-
-        target_file = target_dir / target
-        symlink_file = symlink_dir / symlink
-
-        # check target
-        if not target_file.exists():
-            warnings.warn(f'FileNotFound: {target_file=}')
-            continue
-
-        # check symlnk
-        if symlink_file.is_symlink():
-            symlink_file.unlink()
-        elif symlink_file.exists():
-            # FIXME rm option
-            symlink_file.rename(symlink_file.with_suffix('.bak'))
-
-        symlink_file.parent.mkdir(parents=True, exist_ok=True)
-
-        # make a link pointing to target
-        if config.verbose:
-            print(f'{symlink_file} -> {target_file}')
-        symlink_file.symlink_to(target_file)
-
-
+    config = toml.load(root_dir / 'config.toml')
+    process(config)
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-v', '--verbose', action='store_true', default=False,
                         help='verbose')
     args = parser.parse_args()
-    run(args)
+    run(
+        verbose=args.verbose
+    )
 
 
 if __name__ == '__main__':
