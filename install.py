@@ -22,12 +22,13 @@ def make_link(target, link, test_mode: bool):
     if test_mode:
         return
 
-    if link.exists():
-        # TODO rm
-        if link.is_symlink():
-            link.unlink()
-        else:
-            link.rename(link.with_suffix('.bak'))
+    if link.is_symlink():
+        link.unlink()
+    elif link.exists():
+        link.rename(link.with_suffix('.bak'))
+    else:
+        # nothing to do
+        ...
 
     link.parent.mkdir(parents=True, exist_ok=True)
     link.symlink_to(target)
