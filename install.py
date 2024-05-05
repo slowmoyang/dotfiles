@@ -2,7 +2,7 @@
 '''setup dotfiles
 '''
 from pathlib import Path
-import toml
+import tomllib
 import argparse
 
 
@@ -11,12 +11,16 @@ def process_path(path: Path):
     # return path.expanduser()
     return path.resolve()
 
-def make_link(target, link):
+def make_link(target, link, test_mode: bool):
     target = Path(target).resolve()
     link = Path(link).expanduser()
 
     if not target.exists():
         raise FileNotFoundError(f'{target=}')
+
+    print(f'{link} --> {target}')
+    if test_mode:
+        return
 
     if link.exists():
         # TODO rm
@@ -26,29 +30,30 @@ def make_link(target, link):
             link.rename(link.with_suffix('.bak'))
 
     link.parent.mkdir(parents=True, exist_ok=True)
-    print(f'{link} --> {target}')
     link.symlink_to(target)
 
 
-def process(data):
+def process(data, test_mode: bool):
     if 'target' in data and 'link' in data:
-        make_link(target=data['target'], link=data['link'])
+        make_link(target=data['target'], link=data['link'], test_mode=test_mode)
     else:
-        for key, value in data.items():
-            process(value)
+        for _, value in data.items():
+            process(value, test_mode=test_mode)
 
-def run(verbose: bool):
+def run(test_mode: bool):
     root_dir = Path(__file__).parent
-    config = toml.load(root_dir / 'config.toml')
-    process(config)
+    config_file = root_dir / 'config.toml'
+    with open(config_file, 'rb') as stream:
+        config = tomllib.load(stream)
+    process(config, test_mode=test_mode)
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-v', '--verbose', action='store_true', default=False,
-                        help='verbose')
+    parser.add_argument('--test', action='store_true', default=False,
+                        help='test mode')
     args = parser.parse_args()
     run(
-        verbose=args.verbose
+        test_mode=args.test
     )
 
 
