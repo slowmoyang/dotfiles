@@ -10,3 +10,5 @@ else
 fi
 unset __mamba_setup
 # <<< mamba initialize <<<
+
+alias mamba="micromamba"
