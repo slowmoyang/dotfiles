@@ -10,7 +10,7 @@ fi
 
 # User specific aliases and functions
 
-export PATH=${HOME}/opt:${PATH}
+export PATH=${HOME}/opt/bin:${PATH}
 
 source ${HOME}/.config/bash/conf.d/micromamba.sh
 source ${HOME}/.config/bash/conf.d/nvm.sh
