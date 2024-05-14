@@ -15,6 +15,7 @@ export PATH=${HOME}/opt/bin:${PATH}
 source ${HOME}/.config/bash/conf.d/micromamba.sh
 source ${HOME}/.config/bash/conf.d/nvm.sh
 source ${HOME}/.config/bash/conf.d/rust.sh
+source ${HOME}/.config/bash/conf.d/misc.sh
 
 export STARSHIP_CONFIG=${HOME}/.config/starship.toml
 eval "$(starship init bash)"

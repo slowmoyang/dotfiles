@@ -1,6 +1,10 @@
 export PATH=${HOME}/.local/bin:${PATH}
 export PATH=${HOME}/opt/bin:${PATH}
 
+ZSH_CONFD=${HOME}/.config/zsh/conf.d
+source ${ZSH_CONFD}/micromamba.zsh
+source ${ZSH_CONFD}/misc.zsh
+
 export STARSHIP_CONFIG=${HOME}/.config/starship.toml
 eval "$(starship init zsh)"
 
@@ -19,6 +23,3 @@ alias la="exa --long -all --header --group-directories-first"
 alias l="ls"
 
 alias rm="rm -i"
-
-ZSH_CONFD=${HOME}/.config/zsh/conf.d
-source ${ZSH_CONFD}/micromamba.zsh
