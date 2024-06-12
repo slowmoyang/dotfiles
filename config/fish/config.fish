@@ -42,3 +42,5 @@ set -U fish_greeting
 set -U nvm_default_version v21.7.3
 
 starship init fish | source
+
+set -U XAUTHORITY {$HOME}/.Xauthority
