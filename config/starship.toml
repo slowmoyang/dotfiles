@@ -29,6 +29,9 @@ disabled = false
 [nodejs]
 disabled = true
 
+[shell]
+disabled = false
+
 # how can I put time on the line same with conda?
 [time]
 disabled = true
