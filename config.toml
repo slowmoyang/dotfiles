@@ -54,6 +54,9 @@
     target = "./config/zsh/logout.zsh"
     link = "~/.zlogout"
 
+    [zsh.confd]
+    target = "./config/zsh/conf.d/"
+    link = "~/.config/zsh/conf.d"
 
 ###############################################################################
 # fish

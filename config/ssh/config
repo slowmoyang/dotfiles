@@ -92,8 +92,12 @@ Host lxplus
     GSSAPIAuthentication yes
     GSSAPIDelegateCredentials yes
 
-
 Host gsdc
     HostName ui20.sdfarm.kr
     Port 4280
     User seyang
+
+Host github.com
+    Hostname ssh.github.com
+    Port 443
+    User git
