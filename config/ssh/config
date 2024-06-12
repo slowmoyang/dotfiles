@@ -70,11 +70,15 @@ Host nurion
     HostName nurion.ksc.re.kr
     User x2718a04
     Port 22
+    PreferredAuthentications keyboard-interactive
+    GSSAPIAuthentication no
 
 Host neuron
     HostName neuron.ksc.re.kr
     User x2719a04
     Port 22
+    PreferredAuthentications keyboard-interactive
+    GSSAPIAuthentication no
 
 Host lxplus.cern.ch aiadm.cern.ch mylinuxbox.cern.ch pcmydepmygroup*.cern.ch
 
