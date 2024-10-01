@@ -13,6 +13,7 @@ alias v="nvim"
 alias j="just"
 alias p="python"
 alias g="git"
+alias s="kitty +kitten ssh"
 #
 alias imgcat="$HOME/.local/bin/term-image"
 alias pdfcat="$HOME/.local/bin/termpdf.py"
