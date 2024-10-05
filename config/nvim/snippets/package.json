@@ -1,0 +1,39 @@
+{
+  "name": "snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": ["all"],
+        "path": "./snippets/all.json"
+      },
+      {
+        "language": ["python"],
+        "path": "./snippets/python/python.json"
+      },
+      {
+        "language": ["python"],
+        "path": "./snippets/python/argparse.json"
+      },
+      {
+        "language": ["python"],
+        "path": "./snippets/python/matplotlib.json"
+      },
+      {
+        "language": ["python"],
+        "path": "./snippets/python/torch.json"
+      },
+      {
+        "language": ["plaintex", "tex"],
+        "path": "./snippets/latex/latex.json"
+      },
+      {
+        "language": ["plaintex", "tex"],
+        "path": "./snippets/latex/beamer.json"
+      },
+      {
+        "language": ["plaintex", "tex"],
+        "path": "./snippets/latex/minted.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "fig": {
+    "prefix": "fig",
+    "body": [
+    "\\begin{figure}",
+    "\t\\begin{center}",
+    "\t\t\\includegraphics[width=0.95\\textwidth]{./fig/${1}}",
+    "\t\\end{center}",
+    "\t\\caption{${2}}\\label{fig:${3}}",
+    "\\end{figure}"
+    ]
+  },
+  "minimpage": {
+    "prefix": "minipage",
+    "body": [
+      "\\begin{minipage}{${2:0.48\\textwidth}}",
+      "\t${1}",
+      "\\end{minipage}"
+    ]
+  },
+  "import": {
+    "prefix": "import",
+    "body": "\\import{${1:full_path}}{${2:file}}",
+    "description": "TODO"
+  },
+  "subimport": {
+    "prefix": "subimport",
+    "body": "\\subimport{${1:path_extension}}{${2:file}}",
+    "description": "TODO"
+  },
+  "graphicspath": {
+    "prefix": "graphicspath",
+    "body": [
+      "\\makeatletter",
+      "\t\\graphicspath{ {\\import@path} }",
+      "\\makeatother"
+    ],
+    "description": "http://latexref.xyz/_005cgraphicspath.html"
+  }
+}

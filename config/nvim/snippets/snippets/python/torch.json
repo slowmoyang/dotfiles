@@ -1,0 +1,14 @@
+{
+  "new module": {
+    "prefix": ["module"],
+    "body": [
+      "class ${1:NewModule}(nn.Module):",
+      "    def __init__(self, ${2}):",
+      "        super().__init__()",
+      "        ${3:...}",
+      "",
+      "    def forward(self, ${4}):",
+      "        ${5:...}"
+    ]
+  }
+}

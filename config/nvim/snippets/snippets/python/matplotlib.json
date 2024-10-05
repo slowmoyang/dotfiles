@@ -1,0 +1,14 @@
+{
+  "import mpl": {
+    "prefix": ["mpl"],
+    "body": "import matplotlib as mpl"
+  },
+  "import plt": {
+    "prefix": ["plt"],
+    "body": "import matplotlib.pyplot as plt"
+  },
+  "subplots": {
+    "prefix": "subplots",
+    "body": "fig, ax = plt.subplots()"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "minted": {
+    "prefix": "minted",
+    "body": [
+      "\\begin{minted}",
+      "[",
+      "\tframe=lines,",
+      "\tframesep=2mm,",
+      "\tbaselinestretch=1.2,",
+      "\tfontsize=\\footnotesize,",
+      "]",
+      "{${1:python}}",
+      "",
+      "\\end{minted}"
+    ]
+  }
+}

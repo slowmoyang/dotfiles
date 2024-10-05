@@ -153,3 +153,7 @@ link = "~/.config/cheat/conf.yml"
 [bat]
 target = "./config/bat.conf"
 link = "~/.config/bat/config"
+
+[nvim]
+target = "./config/nvim"
+link = "~/.config/nvim"
