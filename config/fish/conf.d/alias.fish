@@ -15,5 +15,5 @@ alias p="python"
 alias g="git"
 alias s="kitty +kitten ssh"
 #
-alias imgcat="$HOME/.local/bin/term-image"
+alias imgcat="$HOME/.local/bin/termvisage"
 alias pdfcat="$HOME/.local/bin/termpdf.py"
