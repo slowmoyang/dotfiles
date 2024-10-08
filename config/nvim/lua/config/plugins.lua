@@ -14,6 +14,12 @@ require('lazy').setup({
   -- LSP Support
   {'neovim/nvim-lspconfig'},
 
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
+
+
   ------------------------------------------------------------------------------
   -- Autocompletion
   ------------------------------------------------------------------------------
